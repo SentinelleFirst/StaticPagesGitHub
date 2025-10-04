@@ -1,0 +1,220 @@
+@media (min-width: 820px) { 
+
+    
+
+#menu-links div a img {
+    display: none;
+}
+
+#menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    width: 100%;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+#menu:hover, #menu.menu-active {
+    background-color: white;
+}
+
+#menu-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    color: white;
+    gap: 30px;
+}
+
+#menu-links div {
+    display: flex;
+    justify-content: space-arou;
+    align-items: center;
+}
+
+#menu a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    font-weight: bold;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#menu:hover a, #menu.menu-active a {
+    color: black;
+}
+
+#menu button {
+    display: none !important;
+}
+
+}
+
+
+@media (max-width: 820px) {
+    
+
+#menu button {
+    border: none;
+    background-color: transparent;
+    margin-right: 10px;
+}
+
+    #menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    width: 100%;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+#menu:hover, #menu.menu-active, #menu.open {
+    background-color: white;
+}
+
+#menu a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    font-weight: bold;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#menu:hover a, #menu.menu-active a {
+    color: black;
+}
+
+#menu .btn-open {
+    display: block;
+}
+
+#menu .btn-open.white {
+    display: block;
+}
+
+#menu .btn-open.black {
+    display: none;
+}
+
+#menu .close {
+    display: none;
+}
+
+#menu:hover .btn-open.white, #menu.menu-active .btn-open.white {
+    display: none;
+}
+
+#menu:hover .btn-open.black, #menu.menu-active .btn-open.black {
+    display: block;
+}
+
+#menu.open .close {
+    display: block;
+}
+
+#menu.open .btn-open {
+    display: none !important;
+}
+
+#menu button img{
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    object-position: center;
+}
+#menu-links {
+    z-index: 100px !important;
+  position: absolute;
+  position: fixed;
+  right: -500px;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;         /* plus sûr que 'start' */
+  background: white;
+
+  width: min(100%, 400px);         /* équivaut à width:100% + max-width:400px */
+  box-sizing: border-box;          /* padding/border INCLUS dans la largeur/hauteur */
+
+  /* Hauteur plein écran moins l’entête, padding inclus grâce à border-box */
+  min-height: 100dvh;
+
+  /* Ton espacement interne peut rester sans agrandir visuellement le bloc */
+  padding: 101px 20px 16px 20px;
+
+  gap: 30px;
+  transition: all 0.3s ease;
+}
+
+#menu.open {
+    position: sticky;
+}
+
+#menu.open #menu-links {
+    right: 0;
+}
+
+#menu-links div {
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#menu-links div a {
+    height: 50px;
+    width: 100% !important;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+#menu-links div a:hover {
+    margin-right: 50px;
+}
+
+#menu-links div a img {
+    height: 25px;
+    width: 25px;
+}
+
+
+#menu-links div a p {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#menu.open #menu-links div a {
+    color: black;
+}
+
+#menu.open #menu-links div a {
+    padding-right: 50px;
+}
+
+#menu.open button {
+    z-index: 11;
+    position: fixed;
+    right: 0px;
+}
+
+}
+
+
+.logo-gtc {
+    margin-left: 20px;
+}

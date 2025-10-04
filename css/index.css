@@ -1,0 +1,442 @@
+section {
+    width: 100%;
+    display: flex;
+}
+
+.banner{
+    position: absolute;
+    display:block;
+    width:100%;         
+    height:730px;   
+    z-index: -1;    
+}
+
+pattern image {
+    filter: brightness(0.8);
+    object-fit: cover;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: column;
+    height: auto !important;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+    width: 90%;
+    max-width: 750px;
+    bottom: 0;
+    margin: 0px 50px;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: clamp(28px, calc(10.78px + 4.78vw), 72px);
+    margin: 0;
+}
+
+section p {
+    font-size: 18px;
+    max-width: 600px;
+}
+
+section .title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section .title .line-dot {
+    display: flex;
+    gap: 10px;
+}
+
+section .title .line-dot div {
+    background-color: #F06A22;
+}
+
+section .title p {
+    text-align: center;
+}
+
+.about, .service, .service-boxs, .portofolio, .clients, .comment, .help {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.about .left, .about .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    min-width: 200px;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px;
+}
+
+
+.about svg {
+    display:block;     
+    border-radius: 32px;
+    overflow: hidden; 
+    width:100%;
+    height:auto;
+    aspect-ratio: 100 / 100;
+}
+
+.service-boxs {
+    width: 100%;
+    position: relative;
+    min-height: 450px;
+    align-items: center;
+}
+
+.service-boxs .box {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    justify-content: center;
+}
+
+@media (max-width: 700px) {
+
+    .service-boxs {
+        flex-direction: column;
+    }
+
+    .service-boxs .box {
+        width: 85%;
+    }
+
+}
+
+.service-line {
+    width: 100%;
+    color: black;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: start;
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+}
+
+.service-title {
+    display: flex;
+    flex-direction: row;
+}
+
+.service-title p {
+    min-height: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-title, .service-line ul {
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 20px);
+}
+
+.service-line.active ul {
+    display: block;
+}
+
+.service-line.active {
+    background-color: #F06A22;
+    color: white;
+}
+
+.service-line.active .black, .service-line .white {
+    opacity: 0;
+}
+
+.service-line .black, .service-line.active .white {
+    opacity: 1;
+}
+
+.service-line.question.active .black, .service-line.active .white {
+    transform: rotate(180deg);
+}
+
+.service-line ul {
+    display: none;
+}
+
+.service-boxs .img-box {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.service-boxs .img-box img {
+    opacity: 0;
+    border-radius: 32px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.service-boxs .img-box img.active {
+    border-radius: 32px;
+    opacity: 1;
+}
+
+.gallerie {
+    display: flex;
+    width: 90%;
+    align-items: center;
+    height: 500px;
+    gap: 20px;
+    overflow-x: auto;      /* ← au lieu de overflow-y */
+    overflow-y: hidden;
+    flex-wrap: nowrap;     /* tout sur une ligne */
+    align-items: stretch;  /* optionnel */
+    -webkit-overflow-scrolling: touch;
+}
+
+.gallerie-box {
+    flex: 0 0 250px;       /* = flex-grow:0; flex-shrink:0; flex-basis:250px */
+    width: 250px; 
+    height: 450px;
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.gallerie .backend {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+}
+
+.gallerie-box .content {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0.801);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 16px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.gallerie-box a {
+    text-decoration: none;
+    color: black;
+}
+
+.gallerie-box a img {
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
+    object-position: center;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.gallerie-box.active, .gallerie-box:hover {
+    flex-basis: 400px;
+    width: 400px;
+}
+
+.gallerie-box.active .content , .gallerie-box:hover .content {
+    width: calc(100% - 50px);
+    opacity: 1;
+}
+
+/* ===== Firefox ===== */
+.gallerie{
+  scrollbar-width: thin;                         /* barre fine */
+  scrollbar-color: rgba(0,0,0,.45) transparent;  /* thumb visible, track transparent */
+}
+
+/* ===== WebKit (Chrome, Edge, Safari) ===== */
+.gallerie::-webkit-scrollbar{
+  height: 8px;           /* hauteur de la barre horizontale */
+  background: transparent;
+}
+.gallerie::-webkit-scrollbar-track{
+  background: transparent;  /* cache la “zone” */
+}
+.gallerie::-webkit-scrollbar-thumb{
+  background: rgba(0,0,0,.45);  /* la barre qui bouge */
+  border-radius: 999px;
+  border: 2px solid transparent; /* rend la barre plus fine visuellement */
+  background-clip: content-box;
+}
+.gallerie::-webkit-scrollbar-button{
+  width: 0; height: 0; display: none;  /* supprime les flèches */
+}
+.gallerie::-webkit-scrollbar-corner{
+  background: transparent;
+}
+
+.clients .gallerie {
+    height: 300px;
+}
+
+.clients .clients-logo {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    object-position: center;
+}
+
+
+/* SLider */
+
+.clients .slider {
+    background: white;
+    height: 200px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 90%;
+}
+
+.clients .slider::before,
+.clients .slider::after {
+    content: "";
+    height: 150px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+}
+
+.clients .slider &::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+.clients .slider &::before {
+    left: 0;
+    top: 0;
+}
+
+.clients .slider .slide-track {
+    animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(250px * 10);
+}
+
+.clients .slider .slide {
+    width: 300px;
+    height: 150px;
+    margin: 10px 50px;
+}
+
+.clients .slider .slide img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-250px * 5))
+    }
+}
+
+
+.quotes {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: relative;
+    gap: 30px;
+}
+
+.quotes .back-quote {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    object-position: center;
+    position: absolute;
+    top: 10px;
+    left: 1%;
+}
+
+.quotes .title2 {
+    width: 80%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.quotes .title2 h1, .quotes .title2 p {
+    margin: 0px;
+}
+
+.quote-box {
+    padding: 20px;
+    width: 300px;
+    background-color: #F4F5F6;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.quote-box .stars {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.quote-box .stars img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.quote-box .text {
+    display: flex;
+    align-items: start;
+    gap: 15px;
+}
+
+.quote-box .text p {
+    flex: 1;
+}
+
+.quote-box .text img {
+    width: 15px;
+    height: 50px;
+    object-fit: contain;
+    object-position: center;
+}

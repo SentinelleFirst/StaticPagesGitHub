@@ -1,0 +1,199 @@
+section {
+    width: 100%;
+    display: flex;
+}
+
+.hero {
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 285px !important;
+    overflow: hidden;
+}
+
+.hero .bubble {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #E85603 31%, #F39C12 100%);
+}
+
+.hero h1 {
+    color: white;
+    margin-top: 60px;
+}
+
+section p {
+    font-size: 18px;
+    max-width: 1000px;
+    text-align: center;
+}
+
+section .title h1 {
+    text-align: center;
+}
+
+section .title {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section .title .line-dot {
+    display: flex;
+    gap: 10px;
+}
+
+section .title .line-dot div {
+    background-color: #F06A22;
+}
+
+section .title p {
+    text-align: center;
+}
+
+.sub-hero, .who-we-are, .why-us {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.who-we-are .content {
+    max-width: 80%;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.who-we-are .content .left, .who-we-are .content .right {
+    min-height: 500px;
+    display: flex;
+    align-items: start;
+    gap: 20px;
+}
+
+.who-we-are .content .left {
+    width: 40%;
+    position: relative;
+}
+
+.who-we-are .content .left img {
+    height: 90%;
+    width: 75%;
+    object-fit: cover;
+    border-radius: 32px;
+    object-position: left top;
+}
+
+.who-we-are .content .left .divider {
+    width: 8px;
+    height: 80px;
+    border-radius: 4px;
+    background: linear-gradient(to right, #E85603 31%, #F39C12 100%);
+}
+
+.who-we-are .content .left .mini-box {
+    color: white;
+    position: absolute;
+    border-radius: 32px;
+    bottom: 0;
+    right: 0;
+    padding: 10px 25px;
+    background: linear-gradient(to right, #E85603 31%, #F39C12 100%);
+}
+
+.who-we-are .content .right {
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.who-we-are .content .right h2, .who-we-are .content .right p {
+    text-align: start !important;
+}
+
+.who-we-are .content .right div {
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+@media (max-width: 850px) {
+    .who-we-are .content {
+        flex-direction: column;
+    }
+
+    .who-we-are .content .left, .who-we-are .content .right {
+        width: 100%;
+    }
+
+    .mini-box {
+        right: 15% !important;
+    }
+}
+
+
+
+.quotes {
+    position: relative;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.quotes-back {
+    z-index: -1;
+    border-radius: 64px;
+    overflow: hidden;
+}
+
+.quotes .title2 {
+    width: 80%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.quotes .title2 h2, .quotes .title2 p {
+    margin: 0px;
+    text-align: center;
+}
+
+.quote-box {
+    padding: 20px;
+    width: 300px;
+    height: 200px;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.quote-box p, .quote-box h4 {
+    text-align: center;
+    margin: 0;
+}
+
+.quote-box img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    object-position: center;
+}

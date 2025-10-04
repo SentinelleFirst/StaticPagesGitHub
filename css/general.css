@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+/* Conteneur global */
+body {
+    background-color: white;
+    margin: 0 !important;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins', 'Roboto', sans-serif;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+}
+
+a,
+p,
+li,
+label, input {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.hero {
+    position: relative;
+    height: 760px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.global-btn, .global-btn-2 {
+    height: 40px;
+    border-radius: 20px;
+    padding: 0px 20px;
+    background: linear-gradient(to right, #E85603 31%, #F39C12 100%);
+    color: white !important;
+    font-weight: bold;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+
+.global-btn:hover, .global-btn-2:hover {
+    gap: 35px;
+}
+
+.global-btn img, .global-btn-2 img {
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.global-btn img {
+    background-color: white;
+    border-radius: 15px;
+    height: 25px;
+    width: 25px;
+
+}
+
+.global-btn-2 {
+    width: 150px;
+}

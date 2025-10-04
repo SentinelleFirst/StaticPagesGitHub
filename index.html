@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTC</title>
+    <link rel="icon" href="assets/images/logo.png" type="image/png">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
+    <link href="css/general.css" rel="stylesheet">
+    <script src="js/menu_manager.js"></script>
+    <script src="js/inclusion.js"></script>
+</head>
+
+<body>
+
+    <main>
+        <!-- Menu -->
+        <!-- <?php include 'components/menu.html'; ?>-->
+        <section class="hero">
+            <div id="menu"></div>
+            <svg class="banner" viewBox="0 0 100 100" preserveAspectRatio="none" width="100%" height="700">
+                <defs>
+                    <!-- Ombre -->
+                    <filter id="shadow" x="-15%" y="-20%" width="130%" height="180%">
+                        <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#F06A22" />
+                    </filter>
+
+                    <!-- Image de fond pour le path -->
+                    <!-- userSpaceOnUse => même repère que le viewBox (0→100) -->
+                    <pattern id="imgFill" patternUnits="userSpaceOnUse" width="100" height="100">
+                        <!-- Remplace src par ton image -->
+                        <image href="assets/images/hero.jpg" x="0" y="0" width="100" height="100"
+                            preserveAspectRatio="xMidYMid slice" />
+                    </pattern>
+                </defs>
+
+                <!-- Le chevron rempli par l'image -->
+                <path d="M0 0 L100 0 L100 70 L70 90 L0 70 Z" fill="url(#imgFill)" filter="url(#shadow)" />
+
+                <!-- (Optionnel) voile de couleur par-dessus l'image -->
+                <!-- <path d="M0 0 L100 0 L100 70 L70 90 L0 70 Z" fill="#F06A22" opacity=".55" pointer-events="none"/> -->
+            </svg>
+
+            <!-- Hero content -->
+            <div class="hero-content">
+                <h1>Realisez vos Projets <span style="color: #F06A22">Aujourd’hui</span></h1>
+                <p>Solutions de génie civil, d'énergie et de télécommunications pour les infrastructures modernes.
+                    Fiables, efficaces et conçues pour l'avenir.</p>
+                <a href="services.html" class="global-btn">
+                    Decouvrez Nos sercices
+                    <img src="assets/icons/Up-Right.svg" alt="arrow">
+                </a>
+                <img src="assets/images/grue.png" alt="">
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="title">
+                <div class="line-dot">
+                    <div class="dot" style="width: 10px; height: 10px; border-radius: 5px;"></div>
+                    <div class="divider" style="width: 70px; height: 10px; border-radius: 5px;"></div>
+                </div>
+                <h3>A propos</h3>
+            </div>
+            <div class="left">
+                <svg class="about-shape" viewBox="0 0 100 100">
+                    <defs>
+                        <pattern id="aboutCover" patternUnits="objectBoundingBox"
+                            patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <image href="assets/images/image-simple1.png" x="0" y="0" width="1" height="1"
+                                preserveAspectRatio="xMidYMid slice" /> <!-- = cover -->
+                        </pattern>
+                    </defs>
+
+                    <path d="M0 0 L64 0 Q70 0 76 4 L95.01 16.67 Q100 20 100 26 L100 100 L0 100 Z"
+                        fill="url(#aboutCover)" />
+                </svg>
+
+                <p>Des solutions <span style="color: #F06A22">Innovantes</span> pour tous les secteurs</p>
+                <a href="services.html" class="global-btn-2">
+                    Découvrir
+                    <img src="assets/icons/Right.svg" alt="arrow">
+                </a>
+            </div>
+            <div class="right">
+                <h1>Vous pensez, <span style="color: #F06A22">Nous realisons</span></h1>
+                <p>Expertise dans les domaines du génie civil, de l'énergie et des télécommunications. Fournir des
+                    solutions fiables pour les infrastructures essentielles.</p>
+
+                <svg class="about-shape" viewBox="0 0 100 100">
+
+                    <defs>
+                        <pattern id="aboutCover2" patternUnits="objectBoundingBox"
+                            patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <image href="assets/images/image-simple2.png" x="0" y="0" width="1" height="1"
+                                preserveAspectRatio="xMidYMid slice" /> <!-- = cover -->
+                        </pattern>
+                    </defs>
+                    <path d="M0 0 L100 0 L100 100 L36 100  Q30 100 25.76 95.76  L4.24 74.24 Q0 70 0 64  L0 0 Z"
+                        fill="url(#aboutCover2)" />
+
+                </svg>
+            </div>
+        </section>
+        <section class="service">
+            <div class="title">
+                <div class="line-dot">
+                    <div class="dot" style="width: 10px; height: 10px; border-radius: 5px;"></div>
+                    <div class="divider" style="width: 70px; height: 10px; border-radius: 5px;"></div>
+                </div>
+                <h3>Nos services</h3>
+            </div>
+            <div class="service-boxs">
+                <div class="box">
+                    <div class="service-line service-1 active">
+                        <div class="service-title">
+                            <p>Batiments - Travaux Publics (BTP)</p>
+                            <div style="position: relative;">
+                                <img class="black" style="position: absolute;" src="assets/icons/down-arrow.svg" alt="">
+                                <img class="white" style="position: absolute;" src="assets/icons/down-arrow-white.svg" alt="">
+                            </div>
+                        </div>
+                        <ul class="service-1 active">
+                            <li>Construction tous corps d'état </li>
+                            <li>Réhabilitation</li>
+                            <li>Ouvrages d’art</li>
+                            <li>Voiries et Réseaux Divers (VRD) </li>
+                        </ul>
+                    </div>
+                    <div class="service-line service-2">
+                        <div class="service-title">
+                            <p>Hydraulique, Assainissement et Hydroagricoles </p>
+                            <div style="position: relative;">
+                                <img class="black" style="position: absolute;" src="assets/icons/down-arrow.svg" alt="">
+                                <img class="white" style="position: absolute;" src="assets/icons/down-arrow-white.svg" alt="">
+                            </div>
+                        </div>
+                        <ul class="service-2">
+                            <li>AEPS</li>
+                            <li>Forages </li>
+                            <li>Barrages</li>
+                            <li>Aménagements hydro-agricoles </li>
+                            <li>Latrines communautaires et familiales</li>
+                        </ul>
+                    </div>
+                    <div class="service-line service-3">
+                        <div class="service-title">
+                            <p>Energie et Télécom </p>
+                            <div style="position: relative;">
+                                <img class="black" style="position: absolute;" src="assets/icons/down-arrow.svg" alt="">
+                                <img class="white" style="position: absolute;" src="assets/icons/down-arrow-white.svg" alt="">
+                            </div>
+                        </div>
+                        <ul class="service-3">
+                            <li>Installations & réseaux électriques </li>
+                            <li>Réseaux de fibre optique </li>
+                            <li>Montage et installation de pylônes </li>
+                            <li>Éclairage Public </li>
+                            <li>Energies renouvelables</li>
+                        </ul>
+                    </div>
+                    <div class="service-line service-4">
+                        <div class="service-title">
+                            <p>Prestations et fournitures diverses</p>
+                            <div style="position: relative;">
+                                <img class="black" style="position: absolute; " src="assets/icons/down-arrow.svg" alt="">
+                                <img class="white" style="position: absolute;" src="assets/icons/down-arrow-white.svg" alt="">
+                            </div>
+                        </div>
+                        <ul class="service-4">
+                            <li>Fourniture d'équipements informatiques </li>
+                            <li>Consulting </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="box">
+                    <div style="position: relative;" class="img-box">
+                        <img style="position: absolute;" class="service-1 active" src="assets/images/image-service1.png" alt="">
+                        <img style="position: absolute;" class="service-2" src="assets/images/image-service2.png" alt="">
+                        <img style="position: absolute;" class="service-3" src="assets/images/image-service3.png" alt="">
+                        <img style="position: absolute;" class="service-4" src="assets/images/image-service4.png" alt="">
+                    </div>
+                    <a href="services.html" class="global-btn">
+                        Découvrir
+                        <img src="assets/icons/Up-Right.svg" alt="arrow">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="portofolio">
+            <div class="title">
+                <div class="line-dot">
+                    <div class="dot" style="width: 10px; height: 10px; border-radius: 5px;"></div>
+                    <div class="divider" style="width: 70px; height: 10px; border-radius: 5px;"></div>
+                </div>
+                <h3>Portofolio</h3>
+                <h1>Nos <span style="color: #F06A22">Réalisations</span></h1>
+                <p>Decouvrez nos projets de contruction et travaux publics réalisés</p>
+            </div>
+
+            <div class="gallerie">
+                <div class="gallerie-box active">
+                    <img class="backend" src="assets/images/gallerie1.jpg" alt="">
+                    <a href="" class="content">
+                        <p><span style="font-weight: bold;">Reseau de fibre optique</span><br>
+                            Nanoro, Burkina Faso</p>
+                        <img src="assets/icons/Up-Right.svg" alt="arrow">
+                    </a>
+                </div>
+                <div class="gallerie-box">
+                    <img class="backend" src="assets/images/gallerie1.jpg" alt="">
+                    <a href="" class="content">
+                        <p><span style="font-weight: bold;">Reseau de fibre optique</span><br>
+                            Nanoro, Burkina Faso</p>
+                        <img src="assets/icons/Up-Right.svg" alt="arrow">
+                    </a>
+                </div>
+                <div class="gallerie-box">
+                    <img class="backend" src="assets/images/gallerie1.jpg" alt="">
+                    <a href="" class="content">
+                        <p><span style="font-weight: bold;">Reseau de fibre optique</span><br>
+                            Nanoro, Burkina Faso</p>
+                        <img src="assets/icons/Up-Right.svg" alt="arrow">
+                    </a>
+                </div>
+                <div class="gallerie-box">
+                    <img class="backend" src="assets/images/gallerie1.jpg" alt="">
+                    <a href="" class="content">
+                        <p><span style="font-weight: bold;">Reseau de fibre optique</span><br>
+                            Nanoro, Burkina Faso</p>
+                        <img src="assets/icons/Up-Right.svg" alt="arrow">
+                    </a>
+                </div>
+                <div class="gallerie-box">
+                    <img class="backend" src="assets/images/gallerie1.jpg" alt="">
+                    <a href="" class="content">
+                        <p><span style="font-weight: bold;">Reseau de fibre optique</span><br>
+                            Nanoro, Burkina Faso</p>
+                        <img src="assets/icons/Up-Right.svg" alt="arrow">
+                    </a>
+                </div>
+            </div>
+
+            <a href="projects.html" class="global-btn">
+                Découvrir
+                <img src="assets/icons/Up-Right.svg" alt="arrow">
+            </a>
+        </section>
+
+        <section class="clients">
+            <div class="title">
+                <div class="line-dot">
+                    <div class="dot" style="width: 10px; height: 10px; border-radius: 5px;"></div>
+                    <div class="divider" style="width: 70px; height: 10px; border-radius: 5px;"></div>
+                </div>
+                <h3>Client et Partenaires</h3>
+                <h1>Nos partenaire de <span style="color: #F06A22">Confiance</span></h1>
+                <p>Nous sommes fiers de travailler avec des organisations de premier plan dans divers secteurs
+                    d'activité.</p>
+            </div>
+            <div class="slider">
+                <div class="slide-track">
+                    <div class="slide">
+                        <img  src="assets/images/logo.png" alt="">
+                    </div>
+                    <div class="slide">
+                        <img  src="assets/images/logo.png" alt="">
+                    </div>
+                    <div class="slide">
+                        <img  src="assets/images/logo.png" alt="">
+                    </div>
+                    <div class="slide">
+                        <img  src="assets/images/logo.png" alt="">
+                    </div>
+                    <div class="slide">
+                        <img  src="assets/images/logo.png" alt="">
+                    </div>
+                    <div class="slide">
+                        <img  src="assets/images/logo.png" alt="">
+                    </div>
+                    <div class="slide">
+                        <img  src="assets/images/logo.png" alt="">
+                    </div>
+                    <div class="slide">
+                        <img  src="assets/images/logo.png" alt="">
+                    </div>
+                    <div class="slide">
+                        <img  src="assets/images/logo.png" alt="">
+                    </div>
+                    <div class="slide">
+                        <img  src="assets/images/logo.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="comment">
+            <div class="title">
+                <div class="line-dot">
+                    <div class="dot" style="width: 10px; height: 10px; border-radius: 5px;"></div>
+                    <div class="divider" style="width: 70px; height: 10px; border-radius: 5px;"></div>
+                </div>
+                <h3>Témoignages</h3>
+            </div>
+            <div class="quotes">
+                <img class="back-quote" src="assets/icons/Quote-mark" alt="">
+                <div class="title2">
+                    <h1>Avis Clients</h1>
+                    <p>Ce que disent nos clients</p>
+                </div>
+                <div class="quote-box">
+                    <div class="stars">
+                        <img src="assets/icons/star-full.svg" alt="">
+                        <img src="assets/icons/star-full.svg" alt="">
+                        <img src="assets/icons/star-full.svg" alt="">
+                        <img src="assets/icons/star-full.svg" alt="">
+                        <img src="assets/icons/star-empty.svg" alt="">
+                    </div>
+                    <div class="text">
+                        <img src="assets/icons/Quote-mark" alt="">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim <br><br>
+                            <span style="font-weight: bold;">John DOE</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="quote-box">
+                    <div class="stars">
+                        <img src="assets/icons/star-full.svg" alt="">
+                        <img src="assets/icons/star-full.svg" alt="">
+                        <img src="assets/icons/star-full.svg" alt="">
+                        <img src="assets/icons/star-full.svg" alt="">
+                        <img src="assets/icons/star-empty.svg" alt="">
+                    </div>
+                    <div class="text">
+                        <img src="assets/icons/Quote-mark" alt="">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim <br><br>
+                            <span style="font-weight: bold;">John DOE</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="quote-box">
+                    <div class="stars">
+                        <img src="assets/icons/star-full.svg" alt="">
+                        <img src="assets/icons/star-full.svg" alt="">
+                        <img src="assets/icons/star-full.svg" alt="">
+                        <img src="assets/icons/star-full.svg" alt="">
+                        <img src="assets/icons/star-empty.svg" alt="">
+                    </div>
+                    <div class="text">
+                        <img src="assets/icons/Quote-mark" alt="">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim <br><br>
+                            <span style="font-weight: bold;">John DOE</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <!--<?php include 'components/footer.html'; ?>-->
+    <footer></footer>
+    <script>
+    /* Active sur la ligne cliquée + image correspondante (par l'ordre) */
+    document.addEventListener('click', (e) => {
+    const root = e.target.closest('.service-boxs');
+    const line = e.target.closest('.service-line');
+    if (!root || !line) return;
+
+    const lines = [...root.querySelectorAll('.service-line')];
+    const imgs  = [...root.querySelectorAll('.img-box img')];
+    const i = lines.indexOf(line);
+
+    lines.forEach(el => el.classList.remove('active'));
+    line.classList.add('active');
+
+    imgs.forEach(img => img.classList.remove('active'));
+    if (imgs[i]) imgs[i].classList.add('active');
+    });
+    </script>
+
+
+
+    <!-- Gestion gallerie -->
+    <script>
+        (() => {
+            document.querySelectorAll('.gallerie').forEach(gal => {
+                gal.addEventListener('click', (e) => {
+                    const item = e.target.closest('.gallerie-box');
+                    if (!item || !gal.contains(item)) return;
+
+                    // retire 'active' des autres
+                    gal.querySelectorAll('.gallerie-box.active')
+                        .forEach(el => el.classList.remove('active'));
+
+                    // ajoute 'active' à l'élément cliqué
+                    item.classList.add('active');
+                });
+            });
+        })();
+    </script>
+</body>
+
+</html>

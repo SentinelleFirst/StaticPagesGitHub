@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTC - Projets</title>
+    <link rel="icon" href="assets/images/logo.png" type="image/png">
+    <link href="css/projects.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
+    <link href="css/general.css" rel="stylesheet">
+    <script src="js/menu_manager.js"></script>
+    <script src="js/inclusion.js"></script>
+</head>
+
+<body>
+
+    <main>
+        <!-- Menu -->
+        <!-- <?php include 'components/menu.html'; ?>-->
+        <section class="hero">
+            <div id="menu" class="menu-active"></div>
+            <div class="bubble"></div>
+            <h1>PROJETS</h1>
+        </section>
+
+        <section class="sub-hero">
+            <div class="title">
+                <h1>Nos <span style="color: #F06A22">réalisations</span> parlent pour nous</h1>
+                <p>Chaque projet est la preuve de notre savoir-faire et de notre engagement. Découvrez nos chantiers
+                    achevés et en cours, synonymes de qualité et d’innovation.</p>
+            </div>
+        </section>
+
+        <section class="portofolio">
+            <div class="filter">
+                <button class="active">
+                    Tout
+                </button>
+                <button>
+                    Génie civil
+                </button>
+                <button>
+                    Eau & Assainissement
+                </button>
+                <button>
+                    Energie & Telecom
+                </button>
+            </div>
+
+            <div class="gallerie">
+                <div class="gallerie-box">
+                    <img class="backend" src="assets/images/gallerie1.jpg" alt="">
+                    <p>
+                        <span style="font-weight: bold;">Reseau de fibre optique</span><br>
+                        Nanoro, Burkina Faso
+                    </p>
+                    <div style="display: none !important;">Eau & Assainissement</div>
+                </div>
+                <div class="gallerie-box">
+                    <img class="backend" src="assets/images/gallerie1.jpg" alt="">
+                    <p>
+                        <span style="font-weight: bold;">Reseau de fibre optique</span><br>
+                        Nanoro, Burkina Faso
+                    </p>
+                    <div style="display: none !important;">Energie & Telecom</div>
+                </div>
+                <div class="gallerie-box">
+                    <img class="backend" src="assets/images/gallerie1.jpg" alt="">
+                    <p>
+                        <span style="font-weight: bold;">Reseau de fibre optique</span><br>
+                        Nanoro, Burkina Faso
+                    </p>
+                    <div style="display: none !important;">Genie civil</div>
+                </div>
+                <div class="gallerie-box">
+                    <img class="backend" src="assets/images/gallerie1.jpg" alt="">
+                    <p>
+                        <span style="font-weight: bold;">Reseau de fibre optique</span><br>
+                        Nanoro, Burkina Faso
+                    </p>
+                    <div style="display: none !important;">Eau</div>
+                </div>
+                <div class="gallerie-box">
+                    <img class="backend" src="assets/images/gallerie1.jpg" alt="">
+                    <p>
+                        <span style="font-weight: bold;">Reseau de fibre optique</span><br>
+                        Nanoro, Burkina Faso
+                    </p>
+                    <div style="display: none !important;">Eau</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <!-- Footer -->
+    <!--<?php include 'components/footer.html'; ?>-->
+    <footer></footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filter = document.querySelector('.filter');
+            const buttons = Array.from(filter.querySelectorAll('button'));
+            const cards = Array.from(document.querySelectorAll('.gallerie .gallerie-box'));
+
+            const norm = (s) => (s || '')
+                .toString()
+                .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // retire accents
+                .toLowerCase()
+                .replace(/\s*&\s*/g, ' & ') // espaces autour de &
+                .replace(/\s+/g, ' ')
+                .trim();
+
+            const getCardCat = (card) =>
+                norm(card.querySelector(':scope > div:last-child')?.textContent);
+
+            const cats = new Map(cards.map(c => [c, getCardCat(c)]));
+
+            const match = (filterText, itemText) => {
+                if (!itemText) return false;
+                if (filterText === 'tout') return true;
+
+                // si le filtre indique plusieurs axes (ex.: "eau & assainissement"), on fait un OU
+                if (/[&]|\bet\b/.test(filterText)) {
+                    const parts = filterText.split(/(?:\s*&\s*|\s+et\s+)/).map(p => p.trim()).filter(Boolean);
+                    return parts.some(p => itemText.includes(p));
+                }
+
+                // sinon, correspondance par inclusion
+                return itemText.includes(filterText);
+            };
+
+            filter.addEventListener('click', (e) => {
+                const btn = e.target.closest('button');
+                if (!btn) return;
+
+                // active visuelle
+                buttons.forEach(b => b.classList.toggle('active', b === btn));
+
+                const f = norm(btn.textContent);
+
+                // filtrage
+                cards.forEach(card => {
+                    const ok = match(f, cats.get(card));
+                    card.style.display = ok ? '' : 'none';
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

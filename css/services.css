@@ -1,0 +1,164 @@
+section {
+    width: 100%;
+    display: flex;
+}
+
+.hero {
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 285px !important;
+    overflow: hidden;
+}
+
+.hero .bubble {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #E85603 31%, #F39C12 100%);
+}
+
+.hero h1 {
+    color: white;
+    margin-top: 60px;
+}
+
+section p {
+    font-size: 18px;
+    max-width: 1000px;
+    text-align: center;
+}
+
+section .title h1 {
+    text-align: center;
+}
+
+section .title {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section .title .line-dot {
+    display: flex;
+    gap: 10px;
+}
+
+section .title .line-dot div {
+    background-color: #F06A22;
+}
+
+section .title p {
+    text-align: center;
+}
+
+.sub-hero, .help {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.sub-hero .sub-list {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 30px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sub-hero .sub-list img {
+    border-radius: 32px !important;
+    width: 320px;
+    height: 360px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.sub-hero .sub-list ul {
+    width: 320px;
+  list-style: disc;           /* ou circle, square… */
+  margin-left: 1.2rem;
+  font-size: 18px;
+}
+
+.sub-hero .sub-list ul li::marker {
+  color: #F06A22;             /* couleur de la puce */
+  font-size: 1.6em;           /* (optionnel) taille de la puce */
+}
+
+.FAQ {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    flex-wrap: wrap;
+    min-height: 600px;
+    gap: 20px;
+}
+
+.FAQ .left {
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.FAQ h1 {
+    text-align: center;
+}
+
+.FAQ .right {
+    width: 65%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.FAQ .right .question {
+    background-color: white;
+    padding: 20px 20px 10px 20px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.247);
+    width: 100%;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    transition: all 0.3s ease;
+}
+
+.FAQ .right .question div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.FAQ .right .question div p {
+    flex: 1;
+    padding-right: 20px;
+    margin: 0;
+    overflow: hidden;
+    font-weight: 600;
+}
+
+.FAQ .right .question .answer {
+    height: 0;
+    overflow: hidden;
+    margin-top: -10px;
+    transition: all 0.3s ease;
+}
+
+.FAQ .right .question.active .answer {
+    height: auto;
+    margin-top: 10px;
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTC - A propos</title>
+    <link rel="icon" href="assets/images/logo.png" type="image/png">
+    <link href="css/about.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
+    <link href="css/general.css" rel="stylesheet">
+    <script src="js/menu_manager.js"></script>
+    <script src="js/inclusion.js"></script>
+</head>
+
+<body>
+
+    <main>
+        <!-- Menu -->
+        <!-- <?php include 'components/menu.html'; ?>-->
+        <section class="hero">
+            <div id="menu" class="menu-active"></div>
+            <div class="bubble"></div>
+            <h1>A PROPOS</h1>
+        </section>
+
+        <section class="who-we-are">
+            <div class="title">
+                <div class="line-dot">
+                    <div class="dot" style="width: 10px; height: 10px; border-radius: 5px;"></div>
+                    <div class="divider" style="width: 70px; height: 10px; border-radius: 5px;"></div>
+                </div>
+                <h3>Qui sommes-nous ?</h3>
+            </div>
+            <div class="content">
+                <div class="left">
+                    <img src="assets/images/image-service4.png" alt="">
+                    <div class="divider"></div>
+                    <div class="mini-box">
+                        <h4 style="text-align: center;">
+                            Experiance<br><span style="font-size: 60px;">+6</span><br>ANS
+                        </h4>
+                    </div>
+                </div>
+                <div class="right">
+                    <h2>Plus qu'un <span style="color: #F06A22;">constructeur</span>, un <span
+                            style="color: #F06A22;">bâtisseur</span> d'avenir</h2>
+                    <p> Nous sommes une entreprise de référence en BTP, énergie et télécoms, animée par l’innovation et
+                        l’excellence pour bâtir un avenir durable.</p>
+                    <div>
+                        <img src="assets/icons/Mission.svg" alt="">
+                        <p><span style="font-size: 18px; font-weight: bold">Notre Mission</span><br>
+                            Concevoir et de réaliser des infrastructures modernes qui répondent aux besoins des
+                            communautés et stimulent le développement.</p>
+                    </div>
+                    <div>
+                        <img src="assets/icons/Vision.svg" alt="">
+                        <p><span style="font-size: 18px; font-weight: bold">Notre Vision</span><br>
+                            Nous aspirons à devenir un acteur majeur dans la construction et les technologies, en
+                            contribuant à un avenir où qualité et innovation se rencontrent.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-us">
+            <div class="title">
+                <div class="line-dot">
+                    <div class="dot" style="width: 10px; height: 10px; border-radius: 5px;"></div>
+                    <div class="divider" style="width: 70px; height: 10px; border-radius: 5px;"></div>
+                </div>
+                <h3>Pourquoi nous choisir ?</h3>
+            </div>
+            <div class="quotes">
+                <div class="title2">
+                    <h2>Parce que vos projets méritent <span style="color: #F06A22;">l’excellence</span></h2>
+                    <p>Des solutions sur mesure, une expertise multisectorielle et un engagement total pour livrer des
+                        projets de qualité dans les délais.</p>
+                </div>
+                <div class="quote-box">
+                    <img src="assets/icons/Partnership.svg" alt="">
+                    <h4>Partenaire de confiance</h4>
+                    <p>Un accompagnement personnalisé, de la conception à la réalisation, avec une équipe
+                        expérimentée.</p>
+                </div>
+                <div class="quote-box">
+                    <img src="assets/icons/Globe.svg" alt="">
+                    <h4>Présence régionale</h4>
+                    <p>Des projets réalisés avec succès au niveau national et dans toute la sous-région.</p>
+                </div>
+                <div class="quote-box">
+                    <img src="assets/icons/Quality.svg" alt="">
+                    <h4>Engagement qualité & délais :</h4>
+                    <p>Des infrastructures durables livrées dans le respect des normes et des échéances.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="sub-hero">
+            <div class="title">
+                <h1>PRÊT À DÉMARRER UN NOUVEAU PROJET ?</h1>
+                <p>Contactez-nous pour discuter de vos besoins en matière de construction et obtenir un devis
+                    personnalisé.</p>
+            </div>
+            <a href="projects.html" class="global-btn">
+                Découvrir
+                <img src="assets/icons/Up-Right.svg" alt="arrow">
+            </a>
+        </section>
+
+    </main>
+    <!-- Footer -->
+    <!--<?php include 'components/footer.html'; ?>-->
+    <footer></footer>
+    <script>
+        /* Active sur la ligne cliquée + image correspondante (par l'ordre) */
+        document.addEventListener('click', (e) => {
+            const root = e.target.closest('.service-boxs');
+            const line = e.target.closest('.service-line');
+            if (!root || !line) return;
+
+            const lines = [...root.querySelectorAll('.service-line')];
+            const imgs = [...root.querySelectorAll('.img-box img')];
+            const i = lines.indexOf(line);
+
+            lines.forEach(el => el.classList.remove('active'));
+            line.classList.add('active');
+
+            imgs.forEach(img => img.classList.remove('active'));
+            if (imgs[i]) imgs[i].classList.add('active');
+        });
+    </script>
+
+
+
+    <!-- Gestion gallerie -->
+    <script>
+        (() => {
+            document.querySelectorAll('.gallerie').forEach(gal => {
+                gal.addEventListener('click', (e) => {
+                    const item = e.target.closest('.gallerie-box');
+                    if (!item || !gal.contains(item)) return;
+
+                    // retire 'active' des autres
+                    gal.querySelectorAll('.gallerie-box.active')
+                        .forEach(el => el.classList.remove('active'));
+
+                    // ajoute 'active' à l'élément cliqué
+                    item.classList.add('active');
+                });
+            });
+        })();
+    </script>
+
+    <!-- Gestion FAQ -->
+    <script>
+        /* Active/désactive une question au clic (une seule ouverte à la fois) */
+        document.addEventListener('DOMContentLoaded', () => {
+            const zone = document.querySelector('.FAQ .right');
+            if (!zone) return;
+
+            zone.addEventListener('click', (e) => {
+                const header = e.target.closest('.question > div'); // clique sur l'entête
+                if (!header || !zone.contains(header)) return;
+
+                const item = header.parentElement; // .question
+                // fermer les autres
+                zone.querySelectorAll('.question.active').forEach(q => {
+                    if (q !== item) q.classList.remove('active');
+                });
+                // basculer celle-ci
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
