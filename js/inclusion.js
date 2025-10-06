@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   `;
 
   const FOOTER_HTML = `
+  <button id="scrollToTopBtn" title="Go to top">↑</button>
    <div class="footer-top">
         <div class="footer-top-left">
             <img src="assets/icons/logo.svg" alt="Logo GTC" id="logo">

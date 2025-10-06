@@ -137,7 +137,7 @@
     z-index: 100px !important;
   position: absolute;
   position: fixed;
-  right: -500px;
+  right: -510px;
   top: 0px;
   display: flex;
   flex-direction: column;
@@ -145,7 +145,7 @@
   align-items: flex-start;         /* plus sûr que 'start' */
   background: white;
 
-  width: min(100%, 400px);         /* équivaut à width:100% + max-width:400px */
+  width: min(100%, 500px);         /* équivaut à width:100% + max-width:400px */
   box-sizing: border-box;          /* padding/border INCLUS dans la largeur/hauteur */
 
   /* Hauteur plein écran moins l’entête, padding inclus grâce à border-box */

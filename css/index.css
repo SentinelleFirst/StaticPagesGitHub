@@ -1,8 +1,3 @@
-section {
-    width: 100%;
-    display: flex;
-}
-
 .banner{
     position: absolute;
     display:block;
@@ -41,38 +36,16 @@ pattern image {
     margin: 0;
 }
 
-section p {
-    font-size: 18px;
-    max-width: 600px;
-}
-
-section .title {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-section .title .line-dot {
-    display: flex;
-    gap: 10px;
-}
-
-section .title .line-dot div {
-    background-color: #F06A22;
-}
-
-section .title p {
-    text-align: center;
-}
-
 .about, .service, .service-boxs, .portofolio, .clients, .comment, .help {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: space-around;
     margin: 20px 0;
+}
+
+.about {
+    flex-wrap: wrap-reverse;
 }
 
 .about .left, .about .right {
@@ -346,9 +319,9 @@ section .title p {
 }
 
 .clients .slider .slide {
-    width: 300px;
+    width: 150px;
     height: 150px;
-    margin: 10px 50px;
+    padding: 10px;
 }
 
 .clients .slider .slide img {
