@@ -44,10 +44,6 @@ pattern image {
     margin: 20px 0;
 }
 
-.about {
-    flex-wrap: wrap-reverse;
-}
-
 .about .left, .about .right {
     display: flex;
     flex-direction: column;

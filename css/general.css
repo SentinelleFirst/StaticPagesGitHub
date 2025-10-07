@@ -8,6 +8,7 @@ html {
 section {
     width: 100%;
     display: flex;
+    border: 1px solid black;
 }
 
 section p {
@@ -34,7 +35,7 @@ section .title .line-dot div {
 }
 
 section .title h3 {
-    font-size: 27px;
+    font-size: 15px;
 }
 
 section .title p {
