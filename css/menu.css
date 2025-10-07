@@ -170,7 +170,7 @@
     }
 
     #menu.open {
-        position: sticky;
+        position: fixed;
     }
 
     #menu.open #menu-links {
