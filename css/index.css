@@ -229,8 +229,8 @@ pattern image {
 }
 
 .gallerie-box.active, .gallerie-box:hover {
-    flex-basis: 400px;
-    width: 400px;
+    flex-basis: 300px;
+    width: 300px;
 }
 
 .gallerie-box.active .content , .gallerie-box:hover .content {
