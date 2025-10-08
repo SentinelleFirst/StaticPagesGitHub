@@ -1,26 +1,38 @@
-.banner{
-    position: absolute;
-    display:block;
-    width:100%;         
-    height:730px;   
-    z-index: -1;    
-}
-
-pattern image {
-    filter: brightness(0.8);
-    object-fit: cover;
-}
-
 .hero {
     display: flex;
     justify-content: space-between;
     align-items: start;
     flex-direction: column;
     height: auto !important;
+    position: relative;
+    min-height: 700px;
 }
+
+.banner-clip {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* hauteur fixe souhaitée */
+    z-index: 0;
+    /* derrière le contenu */
+    background: url("../assets/images/home-hero.jpg") center / cover no-repeat;
+    /* même forme que ton path */
+    clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 70% 90%, 0% 70%);
+    filter: drop-shadow(0 4px 72px #E85603);
+    -webkit-filter: drop-shadow(0 4px 72px #E85603);
+}
+
+.banner-clip::after{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25), rgba(0,0,0,.50));
+  pointer-events:none;
+}
+
 
 .hero-content {
     display: flex;
+    position: absolute;
     flex-direction: column;
     align-items: start;
     justify-content: end;
@@ -36,7 +48,17 @@ pattern image {
     margin: 0;
 }
 
-.about, .service, .service-boxs, .portofolio, .clients, .comment, .help {
+.hero-content p {
+    font-weight: bold;
+}
+
+.about,
+.service,
+.service-boxs,
+.portofolio,
+.clients,
+.comment,
+.help {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -44,7 +66,8 @@ pattern image {
     margin: 20px 0;
 }
 
-.about .left, .about .right {
+.about .left,
+.about .right {
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -57,11 +80,11 @@ pattern image {
 
 
 .about svg {
-    display:block;     
+    display: block;
     border-radius: 32px;
-    overflow: hidden; 
-    width:100%;
-    height:auto;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
     aspect-ratio: 100 / 100;
 }
 
@@ -118,7 +141,8 @@ pattern image {
     align-items: center;
 }
 
-.service-title, .service-line ul {
+.service-title,
+.service-line ul {
     justify-content: space-between;
     align-items: center;
     width: calc(100% - 20px);
@@ -133,15 +157,18 @@ pattern image {
     color: white;
 }
 
-.service-line.active .black, .service-line .white {
+.service-line.active .black,
+.service-line .white {
     opacity: 0;
 }
 
-.service-line .black, .service-line.active .white {
+.service-line .black,
+.service-line.active .white {
     opacity: 1;
 }
 
-.service-line.question.active .black, .service-line.active .white {
+.service-line.question.active .black,
+.service-line.active .white {
     transform: rotate(180deg);
 }
 
@@ -175,16 +202,20 @@ pattern image {
     align-items: center;
     height: 500px;
     gap: 20px;
-    overflow-x: auto;      /* ← au lieu de overflow-y */
+    overflow-x: auto;
+    /* ← au lieu de overflow-y */
     overflow-y: hidden;
-    flex-wrap: nowrap;     /* tout sur une ligne */
-    align-items: stretch;  /* optionnel */
+    flex-wrap: nowrap;
+    /* tout sur une ligne */
+    align-items: stretch;
+    /* optionnel */
     -webkit-overflow-scrolling: touch;
 }
 
 .gallerie-box {
-    flex: 0 0 250px;       /* = flex-grow:0; flex-shrink:0; flex-basis:250px */
-    width: 250px; 
+    flex: 0 0 250px;
+    /* = flex-grow:0; flex-shrink:0; flex-basis:250px */
+    width: 250px;
     height: 450px;
     position: relative;
     border-radius: 24px;
@@ -228,41 +259,56 @@ pattern image {
     border-radius: 15px;
 }
 
-.gallerie-box.active, .gallerie-box:hover {
+.gallerie-box.active,
+.gallerie-box:hover {
     flex-basis: 300px;
     width: 300px;
 }
 
-.gallerie-box.active .content , .gallerie-box:hover .content {
+.gallerie-box.active .content,
+.gallerie-box:hover .content {
     width: calc(100% - 50px);
     opacity: 1;
 }
 
 /* ===== Firefox ===== */
-.gallerie{
-  scrollbar-width: thin;                         /* barre fine */
-  scrollbar-color: rgba(0,0,0,.45) transparent;  /* thumb visible, track transparent */
+.gallerie {
+    scrollbar-width: thin;
+    /* barre fine */
+    scrollbar-color: rgba(0, 0, 0, .45) transparent;
+    /* thumb visible, track transparent */
 }
 
 /* ===== WebKit (Chrome, Edge, Safari) ===== */
-.gallerie::-webkit-scrollbar{
-  height: 8px;           /* hauteur de la barre horizontale */
-  background: transparent;
+.gallerie::-webkit-scrollbar {
+    height: 8px;
+    /* hauteur de la barre horizontale */
+    background: transparent;
 }
-.gallerie::-webkit-scrollbar-track{
-  background: transparent;  /* cache la “zone” */
+
+.gallerie::-webkit-scrollbar-track {
+    background: transparent;
+    /* cache la “zone” */
 }
-.gallerie::-webkit-scrollbar-thumb{
-  background: rgba(0,0,0,.45);  /* la barre qui bouge */
-  border-radius: 999px;
-  border: 2px solid transparent; /* rend la barre plus fine visuellement */
-  background-clip: content-box;
+
+.gallerie::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, .45);
+    /* la barre qui bouge */
+    border-radius: 999px;
+    border: 2px solid transparent;
+    /* rend la barre plus fine visuellement */
+    background-clip: content-box;
 }
-.gallerie::-webkit-scrollbar-button{
-  width: 0; height: 0; display: none;  /* supprime les flèches */
+
+.gallerie::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+    /* supprime les flèches */
 }
-.gallerie::-webkit-scrollbar-corner{
-  background: transparent;
+
+.gallerie::-webkit-scrollbar-corner {
+    background: transparent;
 }
 
 .clients .gallerie {
@@ -366,7 +412,8 @@ pattern image {
     justify-content: center;
 }
 
-.quotes .title2 h1, .quotes .title2 p {
+.quotes .title2 h1,
+.quotes .title2 p {
     margin: 0px;
 }
 
